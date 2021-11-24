@@ -1,0 +1,45 @@
+50 23 * * * rm -f /opt/data/data/log/atm-entry-$(date +%Y-%m-%d).log
+50 23 * * * rm -f /opt/data/data/log/atm-server-$(date +%Y-%m-%d).log
+50 23 * * * rm -f /opt/data/data/log/core-service-$(date +%Y-%m-%d).log
+50 23 * * * rm -f /opt/data/data/log/fx-core-entry-$(date +%Y-%m-%d).log
+50 23 * * * rm -f /opt/data/data/log/fx-entry-$(date +%Y-%m-%d).log
+50 23 * * * rm -f /opt/data/data/log/fx-server-$(date +%Y-%m-%d).log
+
+
+
+59 23 * * * start-dfs.sh
+59 23 * * * start-yarn.sh
+59 23 * * * mr-jobhistory-daemon.sh start historyserver
+59 23 * * * nohup hive --service metastore &
+59 23 * * * sqoop2-server start
+
+
+
+0 0 * * * mv /opt/data/proj-bank/bin/log/ /opt/data/data/
+
+
+1 0 * * * mv /opt/data/data/log/atm-entry.log /opt/data/data/log/atm-entry-$(date +%Y-%m-%d).log
+1 0 * * * mv /opt/data/data/log/atm-server.log /opt/data/data/log/atm-server-$(date +%Y-%m-%d).log
+1 0 * * * mv /opt/data/data/log/core-service.log /opt/data/data/log/core-service-$(date +%Y-%m-%d).log
+1 0 * * * mv /opt/data/data/log/fx-core-entry.log /opt/data/data/log/fx-core-entry-$(date +%Y-%m-%d).log
+1 0 * * * mv /opt/data/data/log/fx-entry.log /opt/data/data/log/fx-entry-$(date +%Y-%m-%d).log
+1 0 * * * mv /opt/data/data/log/fx-server.log /opt/data/data/log/fx-server-$(date +%Y-%m-%d).log
+
+
+
+2 0 * * * /opt/data/project/flume_start_to_hdfs.sh
+
+
+
+4 0 * * * /opt/data/project/init_result.sh
+
+
+
+40 0 * * * /opt/data/project/start_job_hdfs2mysql.sh
+
+
+
+0 2 * * * stop-dfs.sh
+0 2 * * * stop -yarn.sh
+0 2 * * * mr-jobhistory-daemon.sh stop historyserver
+0 2 * * * sqoop2-server stop

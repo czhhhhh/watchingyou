@@ -1,0 +1,20 @@
+set server --host hadoop01 --port 12000
+
+start job -n job_hdfs2mysql_result1_2021_07_26
+start job -n job_hdfs2mysql_result2_2021_07_27
+start job -n job_hdfs2mysql_result3_2021_07_27
+start job -n job_hdfs2mysql_result4_2021_07_27
+start job -n job_hdfs2mysql_result5_2021_07_27
+start job -n job_hdfs2mysql_result6_2021_07_27
+start job -n job_hdfs2mysql_result7_2021_07_27
+start job -n job_hdfs2mysql_result8_2021_07_27
+start job -n job_hdfs2mysql_result9_2021_07_27
+start job -n job_hdfs2mysql_result15_2021_07_29
+start job -n job_hdfs2mysql_result14_2021_07_28
+start job -n job_hdfs2mysql_result12_2021_07_27
+start job -n job_hdfs2mysql_result13_2021_07_27
+start job -n job_hdfs2mysql_result10_2021_07_27
+start job -n job_hdfs2mysql_result11_2021_07_27
+
+
+
