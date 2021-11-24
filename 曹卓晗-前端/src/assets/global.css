@@ -1,0 +1,32 @@
+html,
+body,
+#app{
+    height: 100%;
+    margin:0;
+    padding:0;
+}
+
+/*    Gloabl    */
+body, div,iframe, ul, ol, dl, dt, dd, li, dl,
+h1, h2, h3, h4, table,th, td, input, button, select,textarea {margin:0; padding:0;
+font-style: normal;font:12px/1.5 "\5FAE\8F6F\96C5\9ED1","宋体",Arial, Helvetica, sans-serif;}
+/* \5FAE\8F6F\96C5\9ED1 微软雅黑 转换Unicode编码表网址 http://tool.lu/fontfamily/ */
+ol, ul ,li{list-style: none;}
+img {border: 0; vertical-align:middle;}
+body{color:#000000;background:#FFF; text-align:center;}
+
+a{color:#000000;text-decoration:none; }
+a:hover{color:#F00;text-decoration:none;}
+
+.fl{float:left;}
+.fr{float:right;}
+/*清除浮动代码*/
+.clear:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clear{zoom:1} /*原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题 */
+
+.mt10{margin-top:10px}
+.mb10{margin-bottom:10px}
+.pt10{padding-top:10px;}
+.pb10{padding-bottom:10px;}
+
+.head,.main,.foot{ margin:0 auto; width:1000px; overflow:hidden}
